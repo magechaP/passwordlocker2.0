@@ -43,4 +43,15 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         test_user = User("Sharon", "sharon67")
         test_user.save_user()
-        self.assertEqual(len(User.users), 2)        
+        self.assertEqual(len(User.users), 2)
+
+    def test_display_all(self):
+        """
+        test_display_all test case to test whether users can view their account details
+        """
+        self.new_user.save_user()
+        self.assertEqual(User.display_all(), User.users)
+
+
+if __name__ == '__main__':
+    unittest.main()                
