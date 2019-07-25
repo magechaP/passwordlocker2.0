@@ -41,7 +41,7 @@ class TestUser(unittest.TestCase):
         for multiple users to save their accounts with password locker
         """
         self.new_user.save_user()
-        test_user = User("Sharon", "sharon67")
+        test_user = User("Peter", "yang2019")
         test_user.save_user()
         self.assertEqual(len(User.users), 2)
 
