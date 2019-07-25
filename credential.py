@@ -18,3 +18,15 @@ class Credential:
         self.username = username
         self.accountname = accountname
         self.password = password
+
+    def save_credential(self):
+        """
+        save_credential method to help a user save a credential
+        """
+        Credential.credentials.append(self)
+
+    def delete_credential(self):
+        """
+        delete_method to help a user delete an existing credential
+        """
+        Credential.credentials.remove(self)        
