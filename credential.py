@@ -49,5 +49,18 @@ class Credential:
         for credential in cls.credentials:
             if credential.accountname == accountname:
                 return True
-            
-                            
+
+    @classmethod
+    def display_credentials(cls):
+        """
+        display_credentials method to help user view all their saved credentials
+        """
+        return cls.credentials
+
+    @classmethod
+    def copy_username(cls, accountname):
+        """
+        copy_username method to help user copy their username to machine clipboard
+        """
+        credential_found = Credential.find_accountname(accountname)
+        pyperclip.copy(credential_found.username)                            
