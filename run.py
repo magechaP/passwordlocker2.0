@@ -70,4 +70,16 @@ def copyUsername(account_name):
     """
     return Credential.copy_username(account_name)
 
+def copyAccountname(account_name):
+    """
+    copyAccountname function that enables user to copy their
+    accountname to the machine clipboard
+    """
+    return Credential.copy_accountname(account_name)
 
+def copyPassword(account_name):
+    """
+    copyPassword function that enables user to copy their password 
+    to the machine clipboard
+    """
+    return Credential.copy_password(account_name)
