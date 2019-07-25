@@ -24,12 +24,12 @@ def saveCredential(credential):
     """
     credential.save_credential()
 
-    def saveUser(user):
-        """
+def saveUser(user):
+    """
     saveUser function to create a user account whenever a user
     signs up with password locker
     """
-    User.save_user()
+    user.save_user()
 
 def deleteCredential(credential):
     """
@@ -201,3 +201,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+
