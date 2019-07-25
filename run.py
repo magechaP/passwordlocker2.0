@@ -43,3 +43,31 @@ def findCredential(account_name):
     return all its details
     """
     return Credential.find_accountname(account_name)
+
+def credentialExists(account_name):
+    """
+    credentialExists function to check whether a credential exists
+    and return True or False
+    """
+    return Credential.credential_exists(account_name)
+
+def displayCredentials():
+    """
+    displayCredentials function to display the credentials currently saved
+    """
+    return Credential.display_credentials()
+
+def displayUser():
+    """
+    displayUser function to display user details if user has an account
+    """
+    return User.display_all()
+
+def copyUsername(account_name):
+    """
+    copyUsername function that enables user to copy their user name to their
+    machine clip board
+    """
+    return Credential.copy_username(account_name)
+
+
