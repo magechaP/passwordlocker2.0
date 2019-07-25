@@ -14,3 +14,9 @@ class User:
         """
         self. name = name
         self.login_password = login_password
+
+    def save_user(self):
+        """
+        save_user method that helps a user create an account with password locker
+        """
+        User.users.append(self)
