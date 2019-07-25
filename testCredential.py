@@ -102,4 +102,17 @@ class TestCredential(unittest.TestCase):
 
         self.new_credential.save_credential()
         Credential.copy_accountname("Instagram")
-        self.assertEqual(self.new_credential.accountname,pyperclip.paste())                                
+        self.assertEqual(self.new_credential.accountname,pyperclip.paste())
+
+    def test_copy_password(self):
+        """
+        test_copy_password to test if user can copy their password to their machine clipboard
+        """
+
+        self.new_credential.save_credential()
+        Credential.copy_password("Pinterest")
+        self.assertEqual(self.new_credential.password,pyperclip.paste())
+
+
+if __name__ == '__main__':
+    unittest.main()                                        
