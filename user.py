@@ -20,3 +20,10 @@ class User:
         save_user method that helps a user create an account with password locker
         """
         User.users.append(self)
+
+    @classmethod
+    def display_all(cls):
+        """
+        display_all method that helps user view their account details
+        """
+        return cls.users
