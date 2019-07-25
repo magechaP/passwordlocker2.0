@@ -62,9 +62,11 @@ class TestCredential(unittest.TestCase):
         by its accountname
         """
         self.new_credential.save_credential()
-        test_credential = Credential("Peter", "Instagram","2019")
-        test_credential.save_credenInstagram        found_credential = Credential.find_accountname("Instagram")
+        test_credential = Credential("Peter", "Instagram", "2019")
+        test_credential.save_credential()
+        found_credential = Credential.find_accountname("Instagram")
         self.assertEqual(found_credential.accountname, test_credential.accountname)
+
 
     def test_credential_exists(self):
         """
