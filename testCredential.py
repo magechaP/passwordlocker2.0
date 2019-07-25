@@ -43,4 +43,26 @@ class TestCredential(unittest.TestCase):
         self.new_credential.save_credential()
         test_credential = Credential ("Peter", "Instagram","2019")
         test_credential.save_credential()
-        self.assertEqual(len(Credential.credentials), 2)        
+        self.assertEqual(len(Credential.credentials), 2)
+
+    def test_delete_credential(self):
+        """
+        test_delete_credential test case to test if user can delete an
+        already saved credential
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("Peter", "Instagram","2019")
+        test_credential.save_credential()
+        test_credential.delete_credential()
+        self.assertEqual(len(Credential.credentials),1)
+
+    def test_find_credential_by_accountname(self):
+        """
+        test_find_credential_by_accountname testcase to test if user is able to search for an a saved credential 
+        by its accountname
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("Peter", "Instagram","2019")
+        test_credential.save_credential()
+        found_credential = Credential.find_accountname("Instagram")
+        self.assertEqual(found_credential.accountname, test_credential.accountname)                
