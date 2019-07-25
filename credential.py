@@ -29,4 +29,25 @@ class Credential:
         """
         delete_method to help a user delete an existing credential
         """
-        Credential.credentials.remove(self)        
+        Credential.credentials.remove(self)
+
+    @classmethod
+    def find_accountname(cls,account_name):
+        """
+        find_accountname method to help a user search for an existing credential 
+        by its accountname
+        """
+        for credential in cls.credentials:
+            if credential.accountname == account_name:
+                return credential
+
+    @classmethod
+    def credential_exists(cls,accountname):
+        """
+        credential_exists method to check if a credential exists and return a boolean
+        """
+        for credential in cls.credentials:
+            if credential.accountname == accountname:
+                return True
+            
+                            
