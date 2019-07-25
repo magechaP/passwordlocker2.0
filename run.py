@@ -23,3 +23,23 @@ def saveCredential(credential):
     saveCredential function to save the credential created by the user
     """
     credential.save_credential()
+
+    def saveUser(user):
+        """
+    saveUser function to create a user account whenever a user
+    signs up with password locker
+    """
+    User.save_user()
+
+def deleteCredential(credential):
+    """
+    deleteCredential function that helps user delete an existing credential
+    """
+    credential.delete_credential()
+
+def findCredential(account_name):
+    """
+    findCredential function to search for a credential by accountname and 
+    return all its details
+    """
+    return Credential.find_accountname(account_name)
