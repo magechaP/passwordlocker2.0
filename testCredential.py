@@ -8,3 +8,23 @@ class TestCredential(unittest.TestCase):
     Args:
     unittest.TestCase: TestCase class that helps in creating test cases
     """
+
+    def setUp(self):
+        """
+        Set up method to run before each test case.
+        """
+        self.new_credential = Credential("Sowasse","Pinterest", "sow@yi")
+
+    def tearDown(self):
+        """
+        Tear down method that cleans up after each test case has run
+        """  
+        Credential.credentials = []
+        
+    def test_init(self):
+        """
+        test_init test case to test whether the object is correctly instantiated
+        """
+        self.assertEqual(self.new_credential.username, "Sowasse")
+        self.assertEqual(self.new_credential.accountname, "Pinterest")
+        self.assertEqual(self.new_credential.password, "sow@yi")            
