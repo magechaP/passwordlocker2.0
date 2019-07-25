@@ -63,6 +63,26 @@ class TestCredential(unittest.TestCase):
         """
         self.new_credential.save_credential()
         test_credential = Credential("Peter", "Instagram","2019")
+        test_credential.save_credenInstagram        found_credential = Credential.find_accountname("Instagram")
+        self.assertEqual(found_credential.accountname, test_credential.accountname)
+
+    def test_credential_exists(self):
+        """
+        test_credential_exists test case to check whether a credential exists within credentials saved
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("Peter", "Instagram", "2019")
         test_credential.save_credential()
-        found_credential = Credential.find_accountname("Instagram")
-        self.assertEqual(found_credential.accountname, test_credential.accountname)                
+
+        credential_exists = Credential.credential_exists("Instagram")
+        self.assertTrue(credential_exists)
+
+    def test_display_all_credentials(self):
+        """
+        test_display_all_credentials test case to test whether a user is able to view all the credentials they have saved within 
+        password locker
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential("Peter", "Instagram", "2019")
+        test_credential.save_credential()
+        self.assertEqual(Credential.display_credentials(), Credential.credentials)                        
